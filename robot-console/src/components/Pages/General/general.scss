@@ -1,0 +1,62 @@
+.body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 600px;
+
+    .group {
+      &-header {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .value {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .error-text {
+        font-size: 12px;
+        color: #c0392b;
+      }
+    }
+
+    .coming-soon {
+      border-style: dashed;
+      align-items: center;
+      font-size: 16px;
+      font-style: italic;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    width: 600px;
+
+    .alert {
+      width: inherit;
+    }
+  }
+}

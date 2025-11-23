@@ -1,0 +1,29 @@
+logging {
+  level = "info"
+}
+
+otelcol.receiver.hostmetrics "host" {
+  collection_interval = "15s"
+
+  scrapers = {
+    cpu        = {}
+    memory     = {}
+    disk       = {}
+    filesystem = {}
+    network    = {}
+    load       = {}
+    processes  = {}
+  }
+
+  output {
+    metrics = [otelcol.exporter.prometheus.host.input]
+  }
+}
+
+otelcol.exporter.prometheus "host" {
+  endpoint  = "127.0.0.1:12345"
+  namespace = "polyflow"
+  const_labels = {
+    robot_id = env("ROBOT_ID", "polyflow-robot")
+  }
+}
